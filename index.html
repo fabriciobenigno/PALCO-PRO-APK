@@ -7,7 +7,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="theme-color" content="#000000" />
-  <link rel="manifest" href="manifest.json" />
+  <link rel="manifest" href="./manifest.json" />
   <title>Palco Pro</title>
   <meta name="description" content="Palco Pro é o app premium para músicos em apresentações ao vivo, com repertório persistente, leitura confortável no palco, reconhecimento por fala e experiência profissional no celular." />
   <meta property="og:type" content="website" />
@@ -24,8 +24,8 @@
   <meta name="twitter:title" content="Palco Pro" />
   <meta name="twitter:description" content="App premium para músicos em apresentações ao vivo, com repertório persistente, leitura confortável no palco e experiência profissional no celular." />
   <meta name="twitter:image" content="https://fabriciobenigno.github.io/PALCO-PRO-APK/palco-pro-share.png" />
-  <link rel="icon" type="image/png" sizes="512x512" href="palco-pro-icon.png" />
-  <link rel="apple-touch-icon" href="palco-pro-icon.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="./palco-pro-icon.png" />
+  <link rel="apple-touch-icon" href="./palco-pro-icon.png" />
   <style>
     :root {
       --font-size: 30px;
@@ -675,6 +675,80 @@
     .panel-note { font-size: 12px; line-height: 1.5; color: var(--note-text); }
     .hidden { display: none !important; }
 
+    .developer-card {
+      display: grid;
+      gap: 10px;
+      padding: 16px;
+      border-radius: 22px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.04));
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 14px 34px rgba(0,0,0,0.24), inset 0 1px 0 rgba(255,255,255,0.04);
+    }
+
+    .developer-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: fit-content;
+      min-height: 28px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(79,140,255,0.24), rgba(124,176,255,0.20));
+      border: 1px solid rgba(124,176,255,0.30);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .developer-title {
+      font-size: 15px;
+      line-height: 1.45;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .developer-text {
+      font-size: 13px;
+      line-height: 1.65;
+      color: var(--soft-text);
+    }
+
+    .developer-instagram-btn {
+      min-height: 46px;
+      padding: 12px 14px;
+      border-radius: 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      text-decoration: none;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      background: linear-gradient(135deg, rgba(91,176,255,0.24), rgba(52,131,248,0.18));
+      border: 1px solid rgba(124,176,255,0.32);
+      box-shadow: 0 10px 26px rgba(0,0,0,0.22);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+
+    .developer-instagram-btn:hover,
+    .developer-instagram-btn:focus-visible {
+      transform: translateY(-1px);
+      border-color: rgba(169,229,255,0.42);
+      box-shadow: 0 14px 30px rgba(0,0,0,0.24);
+      outline: none;
+    }
+
+    .developer-instagram-btn img {
+      width: 18px;
+      height: 18px;
+      object-fit: contain;
+      display: block;
+    }
+
+
     .more-options-wrap {
       display: grid;
       gap: 10px;
@@ -1312,64 +1386,6 @@
       flex: 0 0 18px;
     }
 
-
-    .developer-card {
-      display: grid;
-      gap: 12px;
-      padding: 16px;
-      border-radius: 22px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
-      border: 1px solid rgba(255,255,255,0.12);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
-    }
-
-    .developer-card-label {
-      font-size: 12px;
-      line-height: 1.5;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--note-text);
-    }
-
-    .developer-card-title {
-      margin: 0;
-      font-size: 18px;
-      line-height: 1.35;
-      font-weight: 700;
-      color: #fff;
-    }
-
-    .developer-card-subtitle {
-      margin: 0;
-      font-size: 13px;
-      line-height: 1.65;
-      color: var(--soft-text);
-    }
-
-    .developer-instagram-btn {
-      min-height: 48px;
-      padding: 12px 16px;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,0.14);
-      background: linear-gradient(135deg, rgba(118, 203, 255, 0.96), rgba(76, 150, 255, 0.94));
-      color: #f8fbff;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      font-size: 14px;
-      font-weight: 700;
-      box-shadow: 0 16px 36px rgba(0,0,0,0.24), inset 0 1px 0 rgba(255,255,255,0.2);
-    }
-
-    .developer-instagram-btn img {
-      width: 20px;
-      height: 20px;
-      object-fit: contain;
-      flex: 0 0 20px;
-    }
-
     @media (max-width: 560px) {
       :root { --text-width: 90vw; }
       .script-inner { padding-left: 18px; padding-right: 18px; }
@@ -1383,6 +1399,7 @@
 </head>
 <body>
   <div class="app" id="app">
+
     <div class="stage-layer"></div>
 
     <div class="teleprompter-overlay">
@@ -1402,7 +1419,7 @@
             <h2 class="library-title">Repertório</h2>
             <p class="library-subtitle">Escolha sua música por nome, cantor, estilo ou pela lista completa.</p>
           </div>
-          <button class="mini-btn close-icon-btn" id="hideLibraryBtn" aria-label="Fechar repertório"><img src="fechar.png" alt="Fechar" /></button>
+          <button class="mini-btn close-icon-btn" id="hideLibraryBtn" aria-label="Fechar repertório"><img src="./fechar.png" alt="Fechar" /></button>
         </div>
 
         <div class="library-card">
@@ -1446,7 +1463,7 @@
     <div class="side-panel" id="sidePanel">
       <div class="panel-title">
         <h2>Ajustes</h2>
-        <button class="mini-btn close-icon-btn" id="hidePanelBtn" aria-label="Fechar"><img src="fechar.png" alt="Fechar" /></button>
+        <button class="mini-btn close-icon-btn" id="hidePanelBtn" aria-label="Fechar"><img src="./fechar.png" alt="Fechar" /></button>
       </div>
 
       <div class="panel-grid">
@@ -1531,16 +1548,6 @@
           </div>
         </div>
 
-        <div class="developer-card">
-          <div class="developer-card-label">Desenvolvimento</div>
-          <h3 class="developer-card-title">App desenvolvido por Fabricio Benigno</h3>
-          <p class="developer-card-subtitle">Canal oficial para suporte, novidades e contato profissional do aplicativo.</p>
-          <a class="developer-instagram-btn" href="https://instagram.com/fabricio_benigno" target="_blank" rel="noopener noreferrer">
-            <img src="instagram.ico" alt="Instagram" />
-            <span>@fabricio_benigno</span>
-          </a>
-        </div>
-
         <div class="field">
           <label>Bluetooth</label>
           <div class="panel-note">Os controles de teclado e botões Bluetooth continuam aceitando setas, espaço e Enter para ajudar no uso ao vivo.</div>
@@ -1550,6 +1557,29 @@
           <label>Espelhamento</label>
           <div class="panel-note">O espelhamento permanece disponível para situações em que a leitura invertida fizer sentido no seu palco.</div>
         </div>
+
+        <div class="field">
+          <label>Sobre o aplicativo</label>
+          <div class="developer-card">
+            <div class="developer-badge">Desenvolvimento</div>
+            <div class="developer-title">App desenvolvido por Fabricio Benigno</div>
+            <div class="developer-text">
+              Solução desenvolvida com foco em performance, leitura confortável no palco
+              e experiência profissional para uso em apresentações ao vivo.
+            </div>
+            <a
+              class="developer-instagram-btn"
+              href="https://instagram.com/fabricio_benigno"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Abrir Instagram de Fabricio Benigno"
+            >
+              <img src="./instagram.ico" alt="Instagram" />
+              <span>@fabricio_benigno</span>
+            </a>
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -1560,7 +1590,7 @@
             <h2 class="fullscreen-title">Login</h2>
             <p class="fullscreen-subtitle">Entre na sua conta para sincronizar seu repertório no celular.</p>
           </div>
-          <button class="mini-btn close-icon-btn" id="hideAuthPanelBtn" aria-label="Fechar"><img src="fechar.png" alt="Fechar" /></button>
+          <button class="mini-btn close-icon-btn" id="hideAuthPanelBtn" aria-label="Fechar"><img src="./fechar.png" alt="Fechar" /></button>
         </div>
 
         <div class="fullscreen-card">
@@ -1596,7 +1626,7 @@
             <h2 class="fullscreen-title">Cadastro</h2>
             <p class="fullscreen-subtitle">Crie seu acesso com um fluxo mais completo, pensado para uso no celular.</p>
           </div>
-          <button class="mini-btn close-icon-btn" id="hideRegisterPanelBtn" aria-label="Fechar"><img src="fechar.png" alt="Fechar" /></button>
+          <button class="mini-btn close-icon-btn" id="hideRegisterPanelBtn" aria-label="Fechar"><img src="./fechar.png" alt="Fechar" /></button>
         </div>
 
         <div class="fullscreen-card">
@@ -1636,7 +1666,7 @@
             <h2 class="fullscreen-title">Recuperar senha</h2>
             <p class="fullscreen-subtitle">Coloque seu Gmail para recuperação de senha e enviaremos as instruções.</p>
           </div>
-          <button class="mini-btn close-icon-btn" id="hideRecoverPanelBtn" aria-label="Fechar"><img src="fechar.png" alt="Fechar" /></button>
+          <button class="mini-btn close-icon-btn" id="hideRecoverPanelBtn" aria-label="Fechar"><img src="./fechar.png" alt="Fechar" /></button>
         </div>
 
         <div class="fullscreen-card">
@@ -1661,7 +1691,7 @@
             <h2 class="fullscreen-title">Cadastrar música</h2>
             <p class="fullscreen-subtitle">Preencha os dados da música e salve no repertório.</p>
           </div>
-          <button class="mini-btn close-icon-btn" id="hideSongEditorBtn" aria-label="Fechar"><img src="fechar.png" alt="Fechar" /></button>
+          <button class="mini-btn close-icon-btn" id="hideSongEditorBtn" aria-label="Fechar"><img src="./fechar.png" alt="Fechar" /></button>
         </div>
 
         <div class="fullscreen-card">
@@ -1708,7 +1738,7 @@ O repertório salvo permanece disponível ao reabrir o app instalado.</textarea>
             <h2 class="fullscreen-title" id="listEditorTitle">Criar lista</h2>
             <p class="fullscreen-subtitle" id="listEditorSubtitle">Defina um nome e selecione as músicas do seu repertório.</p>
           </div>
-          <button class="mini-btn close-icon-btn" id="hideListEditorBtn" aria-label="Fechar"><img src="fechar.png" alt="Fechar" /></button>
+          <button class="mini-btn close-icon-btn" id="hideListEditorBtn" aria-label="Fechar"><img src="./fechar.png" alt="Fechar" /></button>
         </div>
 
         <div class="fullscreen-card">
@@ -1740,7 +1770,7 @@ O repertório salvo permanece disponível ao reabrir o app instalado.</textarea>
             <h2 class="fullscreen-title">Sugestões</h2>
             <p class="fullscreen-subtitle">Pesquise músicas sugeridas, marque as desejadas e salve todas de uma vez no seu repertório.</p>
           </div>
-          <button class="mini-btn close-icon-btn" id="hideSuggestionsPanelBtn" aria-label="Fechar"><img src="fechar.png" alt="Fechar" /></button>
+          <button class="mini-btn close-icon-btn" id="hideSuggestionsPanelBtn" aria-label="Fechar"><img src="./fechar.png" alt="Fechar" /></button>
         </div>
 
         <div class="fullscreen-card">
@@ -1773,7 +1803,7 @@ O repertório salvo permanece disponível ao reabrir o app instalado.</textarea>
     <div class="song-actions-panel" id="songActionsPanel">
       <div class="panel-title">
         <h2>Ações da música</h2>
-        <button class="mini-btn close-icon-btn" id="hideSongActionsBtn" aria-label="Fechar"><img src="fechar.png" alt="Fechar" /></button>
+        <button class="mini-btn close-icon-btn" id="hideSongActionsBtn" aria-label="Fechar"><img src="./fechar.png" alt="Fechar" /></button>
       </div>
       <p class="song-actions-subtitle" id="songActionsSubtitle">Escolha o que deseja fazer.</p>
       <div class="panel-grid">
@@ -1821,6 +1851,7 @@ O repertório salvo permanece disponível ao reabrir o app instalado.</textarea>
       songs: [], currentSongId: null, pendingDeletedSongIds: [],
       supabase: null, syncInFlight: false, currentUser: null, lastSyncAt: 0,
       toastTimer: null, selectedSongActionId: null, revealedSongId: null, librarySortMode: 'alpha', libraryFilterValue: '', suggestionSongs: [], selectedSuggestionIds: [], suggestionsLoadedAt: 0,
+      deferredInstallPrompt: null, installPromptAvailable: false,
       currentTheme: 'original',
       lists: [], currentListId: null, editingListId: null, revealedListId: null,
       librarySelectionMode: false, selectedLibrarySongIds: []
@@ -1897,6 +1928,11 @@ O repertório salvo permanece disponível ao reabrir o app instalado.</textarea>
     const appToast = $('appToast');
     const songActionsPanel = $('songActionsPanel');
     const songActionsSubtitle = $('songActionsSubtitle');
+    const entryInstallCtaBtn = $('entryInstallCtaBtn');
+    const entryInstallSubtitle = $('entryInstallSubtitle');
+    const entryInstallSteps = $('entryInstallSteps');
+    const entryAndroidInstallActions = $('entryAndroidInstallActions');
+    const androidInstallBtn = $('androidInstallBtn');
 
     const SUPABASE_URL = 'https://dlcjcsbdabjupsiwlncd.supabase.co';
     const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_2JU7mYP9oeeUvzncDuZMRw_8p3lzGfT';
@@ -3970,6 +4006,28 @@ O repertório salvo permanece disponível ao reabrir o app instalado.</textarea>
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('./service-worker.js').catch(() => {});
       }, { once: true });
+    }
+          showEntryScreen(target);
+          if (target === 'install') updateInstallExperience();
+        });
+      });
+      if (androidInstallBtn) {
+        androidInstallBtn.addEventListener('click', triggerAndroidInstallPrompt);
+      }
+      if (typeof window.matchMedia === 'function') {
+        ['(display-mode: standalone)', '(display-mode: fullscreen)', '(display-mode: minimal-ui)'].forEach((query) => {
+          const media = window.matchMedia(query);
+          const handler = () => updateBrowserEntryGateVisibility();
+          if (typeof media.addEventListener === 'function') media.addEventListener('change', handler);
+          else if (typeof media.addListener === 'function') media.addListener(handler);
+        });
+      }
+      document.addEventListener('visibilitychange', () => {
+        if (!document.hidden) {
+          updateInstallExperience();
+          updateBrowserEntryGateVisibility();
+        }
+      });
     }
     function init() { createSupabaseClient(); registerServiceWorker(); loadSettings(); updateAccountControls(); loadCurrentDraft(); loadSongs(); loadLists(); updateValueLabels(); state.baseSpeed = Number(baseSpeed.value); state.voiceFollowSpeed = Number(voiceFollowSpeed.value) / 100; state.voiceBoostStrength = 14 + Math.round(state.voiceFollowSpeed * 34); state.voiceBoostDuration = 110 + Math.round(state.voiceFollowSpeed * 140); applyStyles(); loadScript(); setupVoice(); bindEvents(); bindBluetoothControls(); bindTextDrag(); app.classList.add('clean-mode'); $('detailPanel').classList.remove('open'); syncPlayPauseIcon(); if (voiceToggle.checked) enableVoice(true); restoreSupabaseSession(); }
     init();
