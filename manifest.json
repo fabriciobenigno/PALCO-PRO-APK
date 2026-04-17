@@ -1,49 +1,35 @@
 {
-  "id": "/Palco-Pro/",
+  "id": "/PALCO-PRO-APK/",
   "name": "Palco Pro",
   "short_name": "Palco Pro",
-  "description": "Palco Pro é o app premium para músicos em apresentações ao vivo, com repertório persistente, leitura confortável no palco, reconhecimento por fala e experiência profissional no celular.",
+  "description": "App premium para músicos em apresentações ao vivo, com repertório persistente, leitura confortável no palco e experiência profissional no celular.",
   "lang": "pt-BR",
   "dir": "ltr",
-  "start_url": "/Palco-Pro/",
-  "scope": "/Palco-Pro/",
+  "start_url": "/PALCO-PRO-APK/index.html",
+  "scope": "/PALCO-PRO-APK/",
   "display": "standalone",
-  "display_override": [
-    "window-controls-overlay",
-    "standalone",
-    "minimal-ui",
-    "browser"
-  ],
   "orientation": "portrait",
   "background_color": "#000000",
   "theme_color": "#000000",
-  "categories": [
-    "music",
-    "productivity",
-    "utilities"
-  ],
+  "categories": ["music", "productivity", "utilities"],
   "icons": [
     {
-      "src": "icon-192.png",
+      "src": "/PALCO-PRO-APK/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any"
+      "purpose": "any maskable"
     },
     {
-      "src": "icon-512.png",
+      "src": "/PALCO-PRO-APK/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/PALCO-PRO-APK/palco-pro-icon.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     }
-  ],
-  "screenshots": [
-    {
-      "src": "palco-pro-share.png",
-      "sizes": "2048x1365",
-      "type": "image/png",
-      "form_factor": "wide",
-      "label": "Tela inicial do app Palco Pro"
-    }
-  ],
-  "prefer_related_applications": false
+  ]
 }
