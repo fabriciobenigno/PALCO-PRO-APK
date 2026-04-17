@@ -675,6 +675,7 @@
     .panel-note { font-size: 12px; line-height: 1.5; color: var(--note-text); }
     .hidden { display: none !important; }
 
+
     .developer-card {
       display: grid;
       gap: 10px;
@@ -709,12 +710,6 @@
       color: #fff;
     }
 
-    .developer-text {
-      font-size: 13px;
-      line-height: 1.65;
-      color: var(--soft-text);
-    }
-
     .developer-instagram-btn {
       min-height: 46px;
       padding: 12px 14px;
@@ -730,15 +725,6 @@
       background: linear-gradient(135deg, rgba(91,176,255,0.24), rgba(52,131,248,0.18));
       border: 1px solid rgba(124,176,255,0.32);
       box-shadow: 0 10px 26px rgba(0,0,0,0.22);
-      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
-    }
-
-    .developer-instagram-btn:hover,
-    .developer-instagram-btn:focus-visible {
-      transform: translateY(-1px);
-      border-color: rgba(169,229,255,0.42);
-      box-shadow: 0 14px 30px rgba(0,0,0,0.24);
-      outline: none;
     }
 
     .developer-instagram-btn img {
@@ -935,6 +921,106 @@
     .detail-panel.open { display: flex; }
 
     .detail-mode .detail-panel { display: flex; }
+
+    .browser-entry-gate {
+      position: fixed; inset: 0; z-index: 9999; display: none;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(96, 146, 255, 0.28), transparent 30%),
+        radial-gradient(circle at 50% 18%, rgba(255,255,255,0.06), transparent 34%),
+        linear-gradient(180deg, #020409 0%, #09101d 45%, #04070d 100%);
+      padding: calc(var(--safe-top) + 24px) max(20px, env(safe-area-inset-right)) calc(var(--safe-bottom) + 22px) max(20px, env(safe-area-inset-left));
+      color: #f7f9ff;
+    }
+    .browser-entry-gate.active { display: flex; flex-direction: column; justify-content: space-between; }
+    .entry-shell { width: 100%; max-width: 430px; margin: 0 auto; min-height: 100%; display: flex; flex-direction: column; justify-content: space-between; gap: 22px; position: relative; }
+    .entry-main { display: flex; flex-direction: column; justify-content: center; gap: 18px; flex: 1; }
+    .entry-screen {
+      display: none; flex-direction: column; gap: 16px; padding: 26px 22px; border-radius: 30px;
+      background: linear-gradient(180deg, rgba(13, 19, 31, 0.84), rgba(7, 11, 19, 0.76));
+      border: 1px solid var(--card-border); box-shadow: var(--card-shadow);
+      backdrop-filter: blur(22px);
+    }
+    .entry-screen.active { display: flex; }
+    .entry-title { margin: 0; font-size: 25px; line-height: 1.18; font-weight: 800; letter-spacing: -0.025em; text-align: center; text-shadow: 0 10px 28px rgba(0,0,0,0.34); }
+    .entry-title-brand { display: inline-flex; align-items: center; justify-content: center; gap: 12px; width: 100%; }
+    .entry-title-icon { width: 34px; height: 34px; border-radius: 10px; object-fit: cover; box-shadow: 0 10px 24px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.12); flex: 0 0 34px; }
+    .entry-subtitle { margin: 0; font-size: 14px; line-height: 1.72; text-align: center; color: var(--soft-text); }
+    .entry-actions { display: grid; gap: 12px; margin-top: 10px; }
+    .entry-nav-btn, .entry-link-btn, .entry-back-btn {
+      width: 100%; min-height: 60px; border-radius: 20px; padding: 16px 18px; text-decoration: none;
+      display: flex; align-items: center; justify-content: center; gap: 12px; font-size: 15px; font-weight: 700; text-align: center;
+      border: 1px solid rgba(255,255,255,0.14); box-shadow: 0 18px 36px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.05);
+      backdrop-filter: blur(18px); transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease, border-color 0.22s ease;
+      position: relative; overflow: hidden; isolation: isolate;
+    }
+    .entry-nav-btn {
+      background: linear-gradient(135deg, rgba(118, 203, 255, 0.98), rgba(76, 150, 255, 0.96), rgba(137, 216, 255, 0.94));
+      background-size: 220% 220%;
+      border-color: rgba(169, 229, 255, 0.36);
+      box-shadow: 0 20px 42px rgba(0,0,0,0.30), 0 10px 26px rgba(77, 160, 255, 0.20), inset 0 1px 0 rgba(255,255,255,0.22);
+      color: #f8fbff;
+      cursor: pointer;
+      animation: entryNavGradientFlow 7.5s ease-in-out infinite;
+    }
+    .entry-nav-btn::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(115deg, transparent 18%, rgba(255,255,255,0.07) 34%, rgba(255,255,255,0.26) 50%, rgba(255,255,255,0.08) 66%, transparent 82%);
+      transform: translateX(-140%);
+      animation: entryNavSheen 4.8s ease-in-out infinite;
+      pointer-events: none;
+      z-index: -1;
+    }
+    .entry-nav-btn::after {
+      content: "›";
+      font-size: 20px;
+      line-height: 1;
+      font-weight: 800;
+      margin-left: 6px;
+      opacity: 0.92;
+      transform: translateX(0);
+      transition: transform 0.22s ease, opacity 0.22s ease;
+    }
+    .entry-nav-btn:hover,
+    .entry-nav-btn:focus-visible {
+      transform: translateY(-1px);
+      border-color: rgba(205, 241, 255, 0.46);
+      box-shadow: 0 22px 46px rgba(0,0,0,0.32), 0 12px 30px rgba(95, 184, 255, 0.24), inset 0 1px 0 rgba(255,255,255,0.28);
+      outline: none;
+    }
+    .entry-nav-btn:hover::after,
+    .entry-nav-btn:focus-visible::after {
+      transform: translateX(2px);
+      opacity: 1;
+    }
+    .entry-link-btn, .entry-back-btn {
+      background: linear-gradient(180deg, rgba(255,255,255,0.11), rgba(255,255,255,0.06));
+    }
+    .entry-link-btn img { width: 24px; height: 24px; object-fit: contain; flex: 0 0 24px; }
+    @keyframes entryNavGradientFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    @keyframes entryNavSheen {
+      0%, 58%, 100% { transform: translateX(-140%); opacity: 0; }
+      16% { opacity: 1; }
+      34% { transform: translateX(140%); opacity: 0.9; }
+    }
+    .entry-steps { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+    .entry-step {
+      display: flex; gap: 12px; align-items: flex-start; padding: 15px 15px; border-radius: 20px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.04));
+      border: 1px solid rgba(255,255,255,0.11); box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+    }
+    .entry-step-number {
+      width: 28px; height: 28px; border-radius: 999px; background: linear-gradient(135deg, rgba(79,140,255,0.96), rgba(124,176,255,0.88));
+      display: inline-flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800; color: #fff; flex: 0 0 28px; margin-top: 1px;
+      box-shadow: 0 8px 18px rgba(79,140,255,0.26);
+    }
+    .entry-step-text { font-size: 14px; line-height: 1.6; color: rgba(255,255,255,0.9); }
+    .entry-footer { text-align: center; font-size: 12px; line-height: 1.5; color: var(--note-text); padding-bottom: 2px; letter-spacing: 0.04em; text-transform: uppercase; }
 
     .fullscreen-screen {
       position: absolute;
@@ -1399,7 +1485,6 @@
 </head>
 <body>
   <div class="app" id="app">
-
     <div class="stage-layer"></div>
 
     <div class="teleprompter-overlay">
@@ -1553,6 +1638,7 @@
           <div class="panel-note">Os controles de teclado e botões Bluetooth continuam aceitando setas, espaço e Enter para ajudar no uso ao vivo.</div>
         </div>
 
+
         <div class="field">
           <label>Espelhamento</label>
           <div class="panel-note">O espelhamento permanece disponível para situações em que a leitura invertida fizer sentido no seu palco.</div>
@@ -1563,10 +1649,6 @@
           <div class="developer-card">
             <div class="developer-badge">Desenvolvimento</div>
             <div class="developer-title">App desenvolvido por Fabricio Benigno</div>
-            <div class="developer-text">
-              Solução desenvolvida com foco em performance, leitura confortável no palco
-              e experiência profissional para uso em apresentações ao vivo.
-            </div>
             <a
               class="developer-instagram-btn"
               href="https://instagram.com/fabricio_benigno"
@@ -1579,7 +1661,6 @@
             </a>
           </div>
         </div>
-
       </div>
     </div>
 
@@ -4007,6 +4088,87 @@ O repertório salvo permanece disponível ao reabrir o app instalado.</textarea>
         navigator.serviceWorker.register('./service-worker.js').catch(() => {});
       }, { once: true });
     }
+    function isStandaloneMode() {
+      const hasMatchMedia = typeof window.matchMedia === 'function';
+      const displayModeStandalone = hasMatchMedia && window.matchMedia('(display-mode: standalone)').matches;
+      const displayModeFullscreen = hasMatchMedia && window.matchMedia('(display-mode: fullscreen)').matches;
+      const displayModeMinimalUi = hasMatchMedia && window.matchMedia('(display-mode: minimal-ui)').matches;
+      const iosStandalone = window.navigator.standalone === true;
+      const launchedFromAndroidApp = document.referrer.startsWith('android-app://');
+      return displayModeStandalone || displayModeFullscreen || displayModeMinimalUi || iosStandalone || launchedFromAndroidApp;
+    }
+    function isAndroidDevice() { return /Android/i.test(navigator.userAgent || ''); }
+    function isIosDevice() { return /iPhone|iPod/i.test(navigator.userAgent || ''); }
+    function isMobilePhoneBrowser() { const ua = navigator.userAgent || ''; return /Android|iPhone|iPod/i.test(ua); }
+    function shouldShowBrowserEntryGate() { return isMobilePhoneBrowser() && !isStandaloneMode(); }
+    function buildIosInstallSteps() {
+      return `
+        <li class="entry-step"><span class="entry-step-number">1</span><span class="entry-step-text">Abra o menu <strong>Compartilhar</strong> do Safari.</span></li>
+        <li class="entry-step"><span class="entry-step-number">2</span><span class="entry-step-text">Role as opções e toque em <strong>Adicionar à Tela de Início</strong>.</span></li>
+        <li class="entry-step"><span class="entry-step-number">3</span><span class="entry-step-text">Confirme a instalação para o ícone do Palco Pro aparecer na sua tela inicial.</span></li>
+        <li class="entry-step"><span class="entry-step-number">4</span><span class="entry-step-text">Depois, abra o Palco Pro pelo ícone instalado para usar normalmente.</span></li>
+      `;
+    }
+    function buildAndroidInstallSteps() {
+      return `
+        <li class="entry-step"><span class="entry-step-number">1</span><span class="entry-step-text">Toque em <strong>Instalar app</strong> para abrir a instalação oficial do Android.</span></li>
+        <li class="entry-step"><span class="entry-step-number">2</span><span class="entry-step-text">Confirme a instalação quando o Android solicitar.</span></li>
+        <li class="entry-step"><span class="entry-step-number">3</span><span class="entry-step-text">Aguarde o ícone do Palco Pro aparecer na tela inicial do aparelho.</span></li>
+        <li class="entry-step"><span class="entry-step-number">4</span><span class="entry-step-text">Depois, abra o app pelo ícone instalado para usar em tela cheia.</span></li>
+      `;
+    }
+    function updateInstallExperience() {
+      if (!entryInstallSteps || !entryInstallSubtitle || !entryInstallCtaBtn || !entryAndroidInstallActions) return;
+      if (isAndroidDevice()) {
+        entryInstallCtaBtn.textContent = state.installPromptAvailable ? 'Instalar app' : 'Como instalar o app';
+        entryInstallSubtitle.textContent = state.installPromptAvailable
+          ? 'No Android, você pode instalar o Palco Pro diretamente por este botão e abrir como aplicativo.'
+          : 'No Android, o botão oficial de instalação aparece assim que o navegador liberar a instalação do app.';
+        entryInstallSteps.innerHTML = buildAndroidInstallSteps();
+        entryAndroidInstallActions.classList.toggle('hidden', !state.installPromptAvailable);
+      } else {
+        entryInstallCtaBtn.textContent = 'Tutorial de instalação';
+        entryInstallSubtitle.textContent = 'No iPhone, siga o passo a passo abaixo para adicionar o Palco Pro à tela de início.';
+        entryInstallSteps.innerHTML = buildIosInstallSteps();
+        entryAndroidInstallActions.classList.add('hidden');
+      }
+    }
+    async function triggerAndroidInstallPrompt() {
+      const deferredPrompt = state.deferredInstallPrompt;
+      if (!deferredPrompt) {
+        showEntryScreen('install');
+        updateInstallExperience();
+        return;
+      }
+      try {
+        await deferredPrompt.prompt();
+        await deferredPrompt.userChoice.catch(() => null);
+      } catch (_) {}
+      state.deferredInstallPrompt = null;
+      state.installPromptAvailable = false;
+      updateInstallExperience();
+    }
+    function updateBrowserEntryGateVisibility() {
+      const gate = $('browserEntryGate');
+      if (!gate) return;
+      const visible = shouldShowBrowserEntryGate();
+      gate.classList.toggle('active', visible);
+      gate.setAttribute('aria-hidden', visible ? 'false' : 'true');
+    }
+    function showEntryScreen(target) { const map = { home: 'entryHomeScreen', install: 'entryInstallScreen', usage: 'entryUsageScreen' }; const activeId = map[target] || map.home; ['entryHomeScreen', 'entryInstallScreen', 'entryUsageScreen'].forEach((id) => { const screen = $(id); if (screen) screen.classList.toggle('active', id === activeId); }); }
+    function setupBrowserEntryGate() {
+      const gate = $('browserEntryGate');
+      if (!gate) return;
+      updateBrowserEntryGateVisibility();
+      showEntryScreen('home');
+      updateInstallExperience();
+      gate.querySelectorAll('[data-entry-target]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const target = btn.getAttribute('data-entry-target');
+          if (target === 'install' && isAndroidDevice() && state.installPromptAvailable) {
+            triggerAndroidInstallPrompt();
+            return;
+          }
           showEntryScreen(target);
           if (target === 'install') updateInstallExperience();
         });
@@ -4014,6 +4176,12 @@ O repertório salvo permanece disponível ao reabrir o app instalado.</textarea>
       if (androidInstallBtn) {
         androidInstallBtn.addEventListener('click', triggerAndroidInstallPrompt);
       }
+      window.addEventListener('beforeinstallprompt', (event) => {
+        event.preventDefault();
+        state.deferredInstallPrompt = event;
+        state.installPromptAvailable = true;
+        updateInstallExperience();
+      });
       if (typeof window.matchMedia === 'function') {
         ['(display-mode: standalone)', '(display-mode: fullscreen)', '(display-mode: minimal-ui)'].forEach((query) => {
           const media = window.matchMedia(query);
@@ -4022,6 +4190,12 @@ O repertório salvo permanece disponível ao reabrir o app instalado.</textarea>
           else if (typeof media.addListener === 'function') media.addListener(handler);
         });
       }
+      window.addEventListener('appinstalled', () => {
+        state.deferredInstallPrompt = null;
+        state.installPromptAvailable = false;
+        updateInstallExperience();
+        updateBrowserEntryGateVisibility();
+      });
       document.addEventListener('visibilitychange', () => {
         if (!document.hidden) {
           updateInstallExperience();
